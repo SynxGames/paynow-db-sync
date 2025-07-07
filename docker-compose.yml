@@ -7,21 +7,22 @@ services:
       - .:/app
     env_file:
       - .env
-    networks:
-      - paynowsync
+    # networks:
+    #   - paynowsync
     depends_on:
       - mysql
 
-  mysql:
-    image: mariadb
-    environment:
-      MARIADB_ROOT_HOST: '%'
-      MARIADB_ROOT_PASSWORD: example
-      MARIADB_DATABASE: paynow_sync
-    ports:
-      - "3306:3306"
-    networks:
-      - paynowsync
+  # Uncomment this if you want to test using a local SQL instance
+  # mysql:
+  #   image: mariadb
+  #   environment:
+  #     MARIADB_ROOT_HOST: '%'
+  #     MARIADB_ROOT_PASSWORD: example
+  #     MARIADB_DATABASE: paynow_sync
+  #   ports:
+  #     - "3306:3306"
+  #   networks:
+  #     - paynowsync
 
-networks:
-  paynowsync:
+# networks:
+#   paynowsync:
