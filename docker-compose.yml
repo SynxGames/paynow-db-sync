@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  paynow-sync:
+    build: .
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    networks:
+      - paynowsync
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mariadb
+    environment:
+      MARIADB_ROOT_HOST: '%'
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: paynow_sync
+    ports:
+      - "3306:3306"
+    networks:
+      - paynowsync
+
+networks:
+  paynowsync:

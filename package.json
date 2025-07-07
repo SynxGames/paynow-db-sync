@@ -1,0 +1,20 @@
+{
+  "name": "paynow-db-sync",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "Oliver Whitehead <oliver@synx.games>",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@ywwa/pnapi": "^1.0.2",
+    "axios": "^1.10.0",
+    "dotenv": "^17.0.1",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "typescript": "^5.0.0"
+  }
+}
