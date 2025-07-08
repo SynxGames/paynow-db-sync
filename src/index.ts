@@ -31,7 +31,7 @@ const STANDARD_REQUEST_CONFIG: AxiosRequestConfig<any> = {
 const TABLE_SQL = `
 CREATE TABLE IF NOT EXISTS paynow_orders (
     id VARCHAR(64) PRIMARY KEY, 
-    minecraft_uuid UUID,
+    minecraft_uuid VARCHAR(36),
     subtotal_cents INT NOT NULL,
     total_cents INT NOT NULL,
     completed TIMESTAMP NOT NULL
